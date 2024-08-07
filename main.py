@@ -24,9 +24,9 @@ def read_root():
 
 @app.get("/api/get-range")
 async def get_data(
-    startdate: Optional[str] = Query(None),
-    enddate: Optional[str] = Query(None)
+    startDate: Optional[date] = Query(None),
+    endDate: Optional[date] = Query(None)
 ):
     controller = Controller()
-    data = controller.get_data(str(startdate), str(enddate))
+    data = controller.get_data(str(startDate), str(endDate))
     return data
